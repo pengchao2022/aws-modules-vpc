@@ -1,4 +1,4 @@
-# Core Resources
+
 output "vpc_id" {
   value = module.vpc.vpc_id
 }
@@ -61,7 +61,6 @@ output "subnet_details" {
   }
 }
 
-# Remove the problematic output or replace with available outputs
 output "nat_configuration" {
   value = module.vpc.nat_gateway_configuration
 }
