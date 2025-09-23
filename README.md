@@ -1,6 +1,6 @@
 # VPC Module for AWS
 
-This Terraform module creates a complete VPC infrastructure with public and private subnets, Internet Gateway, and configurable NAT Gateways.
+Devops Turtorial written by pengchao ma, This Terraform module creates a complete VPC infrastructure with public and private subnets, Internet Gateway, and configurable NAT Gateways.
 
 ## Features
 
@@ -50,12 +50,6 @@ private_subnet_cidrs = [
   "10.0.103.0/24"
 ]
 
-availability_zones = [
-  "us-east-1a",
-  "us-east-1b",
-  "us-east-1c"
-]
-
 enable_nat_gateway = true
 nat_gateway_count  = 1
 single_nat_gateway = true
@@ -69,7 +63,7 @@ tags = {
 ```
 
 
-## notice
+## Notice
 
 - for a production env , you should give each private subnet one nat gatway
 - for a development env , there is no need to give each private subnet one nat gateway, just 1 is okay to save money.
