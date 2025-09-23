@@ -1,4 +1,4 @@
-# VPC Module for AWS
+# AWS Modules VPC
 
 Devops Turtorial written by pengchao ma, This Terraform module creates a complete VPC infrastructure with public and private subnets, Internet Gateway, and configurable NAT Gateways.
 
