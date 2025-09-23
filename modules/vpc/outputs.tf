@@ -80,3 +80,13 @@ output "nat_gateway_configuration" {
     actual_created = length(aws_nat_gateway.main)
   }
 }
+
+output "nat_gateway_public_ips" {
+  description = "List of public IP addresses of NAT Gateways"
+  value       = aws_nat_gateway.main[*].public_ip
+}
+
+output "nat_eip_public_ips" {
+  description = "List of public IP addresses of Elastic IPs for NAT Gateways"
+  value       = aws_eip.nat[*].public_ip
+}
