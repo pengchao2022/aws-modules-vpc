@@ -16,19 +16,22 @@ This Terraform module creates a complete VPC infrastructure with public and priv
 
 ```hcl
 module "vpc" {
-  source = "./vpc-module"
+  source = "./modules/vpc"
 
-  region        = "us-east-1"
-  vpc_name      = "production-vpc"
-  vpc_cidr      = "10.0.0.0/16"
-  
-  # NAT Gateway configuration
-  enable_nat_gateway = true
-  nat_gateway_count  = 2
-  single_nat_gateway = false
-
-  tags = {
-    Environment = "production"
-    Project     = "my-app"
-  }
+  region               = var.region
+  vpc_name             = var.vpc_name
+  vpc_cidr             = var.vpc_cidr
+  public_subnet_cidrs  = var.public_subnet_cidrs
+  private_subnet_cidrs = var.private_subnet_cidrs
+  availability_zones   = var.availability_zones
+  enable_nat_gateway   = var.enable_nat_gateway
+  nat_gateway_count    = var.nat_gateway_count
+  single_nat_gateway   = var.single_nat_gateway
+  tags                 = var.tags
 }
+```
+## notice
+
+- for a production env , you should give each private subnet one nat gatway
+- for a development env , there is no need to give each private subnet one nat gateway, just 1 is okay to save money.
+
