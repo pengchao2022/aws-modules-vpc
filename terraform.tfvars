@@ -16,8 +16,8 @@ private_subnet_cidrs = [
 ]
 
 enable_nat_gateway = true
-nat_gateway_count  = 2
-single_nat_gateway = false
+nat_gateway_count  = 1
+single_nat_gateway = true
 
 tags = {
   Environment = "production"
